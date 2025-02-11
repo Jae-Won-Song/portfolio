@@ -4,6 +4,28 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ReactIcon from "./assets/React-icon.png";
+import TypeScriptIcon from "./assets/TypeScript.png";
+import TailwindIcon from "./assets/tailwind-css.svg";
+import GitIcon from "./assets/git_icon.svg";
+import mySelfie from "./assets/mySelfie.jpeg";
+import NextIcon from "./assets/next-image.png";
+import ReduxIcon from "./assets/redux.svg";
+import ScssIcon from "./assets/scss.svg";
+import JiraIcon from "./assets/jira.svg";
+import BeforeLazyHome from "./assets/적용전홈.png";
+import AfterLazyHome from "./assets/적용후홈.png";
+import BeforeLazyDashBoard from "./assets/적용전대시보드.png";
+import AfterLazyDashBoard from "./assets/적용후대시보드.png";
+import AdminDashBoard from "./assets/dashboard-admin.png";
+import UserDashBoard from "./assets/dashboard-home.png";
+import DivideWork from "./assets/divideWork.png";
+import Issue from "./assets/issue.png";
+import IssueRe from "./assets/issueRe.png";
+import ManageUser from "./assets/manageUser.png";
+import MyTask from "./assets/mytask.png";
+import SignupReq from "./assets/signureq.png";
+import UserFlow from "./assets/userflow.png";
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
@@ -69,17 +91,12 @@ const App = () => {
         <div className="flex flex-col gap-3 text-xl text-right">
           <div className="font-bold text-2xl">Do It Well!</div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/React-icon.png"
-              alt="React Icon"
-              width={30}
-              height={30}
-            />
+            <img src={ReactIcon} alt="React Icon" width={30} height={30} />
             React
           </div>
           <div className="flex items-center gap-2">
             <img
-              src="../public/TypeScript.png"
+              src={TypeScriptIcon}
               alt="TypeScript Icon"
               width={30}
               height={30}
@@ -88,7 +105,7 @@ const App = () => {
           </div>
           <div className="flex items-center gap-2">
             <img
-              src="../public/tailwind-css.svg"
+              src={TailwindIcon}
               alt="Tailwind Icon"
               width={30}
               height={30}
@@ -96,19 +113,14 @@ const App = () => {
             Tailwind
           </div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/git_icon.svg"
-              alt="Git Icon"
-              width={30}
-              height={30}
-            />
+            <img src={GitIcon} alt="Git Icon" width={30} height={30} />
             Git
           </div>
         </div>
 
         <div className="flex flex-col gap-3 text-xl">
           <img
-            src="/mySelfie.jpeg"
+            src={mySelfie}
             alt="mySelfie"
             className="w-[200px] h-[200px] object-cover rounded-full"
           />
@@ -117,39 +129,19 @@ const App = () => {
         <div className="flex flex-col gap-3 text-xl text-right">
           <div className="font-bold text-2xl">Do It!</div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/next-image.png"
-              alt="Next Icon"
-              width={30}
-              height={30}
-            />
+            <img src={NextIcon} alt="Next Icon" width={30} height={30} />
             Next.js
           </div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/redux.svg"
-              alt="Redux Icon"
-              width={30}
-              height={30}
-            />
+            <img src={ReduxIcon} alt="Redux Icon" width={30} height={30} />
             Redux
           </div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/scss.svg"
-              alt="Scss Icon"
-              width={30}
-              height={30}
-            />
+            <img src={ScssIcon} alt="Scss Icon" width={30} height={30} />
             SCSS
           </div>
           <div className="flex items-center gap-2">
-            <img
-              src="../public/jira.svg"
-              alt="Jira Icon"
-              width={30}
-              height={30}
-            />
+            <img src={JiraIcon} alt="Jira Icon" width={30} height={30} />
             Jira
           </div>
         </div>
@@ -245,87 +237,69 @@ const App = () => {
                           <div className="swiper-slide">
                             lazy 적용 전 홈화면
                             <img
-                              src="../public/적용전홈.png"
+                              src={BeforeLazyHome}
                               alt="lazy 적용 전 홈 img"
                             />
                           </div>
                           <div className="swiper-slide">
                             lazy 적용 후 홈화면
                             <img
-                              src="../public/적용후홈.png"
+                              src={AfterLazyHome}
                               alt="lazy 적용 후 홈 img"
                             />
                           </div>
                           <div className="swiper-slide">
                             lazy 적용 전 대시보드 화면
                             <img
-                              src="../public/적용전대시보드.png"
+                              src={BeforeLazyDashBoard}
                               alt="lazy 적용 전 대시보드 img"
                             />
                           </div>
                           <div className="swiper-slide">
                             lazy 적용 후 대시보드
                             <img
-                              src="../public/적용후대시보드.png"
-                              alt=" img"
+                              src={AfterLazyDashBoard}
+                              alt="lazy 적용 후 img"
                             />
                           </div>
                           <div className="swiper-slide">
                             관리자 대시보드
                             <img
-                              src="../public/dashboard-admin.png"
+                              src={AdminDashBoard}
                               alt="admin dashboard img"
                             />
                           </div>
                           <div className="swiper-slide">
                             유저 대시보드
-                            <img
-                              src="../public/dashboard-home.png"
-                              alt="user dashboard img"
-                            />
+                            <img src={UserDashBoard} alt="user dashboard img" />
                           </div>
                           <div className="swiper-slide">
                             작업자 배분
-                            <img
-                              src="../public/divideWork.png"
-                              alt="devide work img"
-                            />
+                            <img src={DivideWork} alt="divide work img" />
                           </div>
                           <div className="swiper-slide">
                             지적광고 목록
-                            <img src="../public/issue.png" alt="issue img" />
+                            <img src={Issue} alt="issue img" />
                           </div>
                           <div className="swiper-slide">
                             지적광고 검수
-                            <img
-                              src="../public/issueRe.png"
-                              alt="issue Re img"
-                            />
+                            <img src={IssueRe} alt="issue Re img" />
                           </div>
                           <div className="swiper-slide">
                             회원 정보 관리
-                            <img
-                              src="../public/manageUser.png"
-                              alt="user manage img"
-                            />
+                            <img src={ManageUser} alt="user manage img" />
                           </div>
                           <div className="swiper-slide">
                             내 작업 관리
-                            <img src="../public/mytask.png" alt="mytask img" />
+                            <img src={MyTask} alt="mytask img" />
                           </div>
                           <div className="swiper-slide">
                             가입 요청 관리
-                            <img
-                              src="../public/signureq.png"
-                              alt="signup img"
-                            />
+                            <img src={SignupReq} alt="signup img" />
                           </div>
                           <div className="swiper-slide">
                             유저플로우
-                            <img
-                              src="../public/userflow.png"
-                              alt="userflow img"
-                            />
+                            <img src={UserFlow} alt="userflow img" />
                           </div>
                         </div>
                       </div>
