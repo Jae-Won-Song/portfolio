@@ -36,6 +36,8 @@ const App = () => {
   const [text, setText] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
   const [cursorVisible, setCursorVisible] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPage, setModalPage] = useState(1); //
   const letters =
     "안녕하세요, 효율적인 개발을 지향하는 프론트엔드 개발자 송재원 입니다.";
   const speed = 150;
@@ -118,14 +120,131 @@ const App = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 text-xl">
+        <div className="text-xs ">
+          {/* 이미지 */}
           <img
             src={mySelfie}
             alt="mySelfie"
-            className="w-[200px] h-[200px] object-cover rounded-full"
+            className="w-[200px] h-[200px] object-cover rounded-full cursor-pointer animate-pulse"
+            onClick={() => {
+              setIsModalOpen(true);
+              setModalPage(1); // 모달 열릴 때 첫 페이지로 초기화
+            }}
           />
-        </div>
+          {/* 모달 */}
+          {isModalOpen && (
+            <div
+              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <div
+                className="flex flex-col justify-around bg-white p-6 rounded-lg shadow-lg w-[1200px] h-[400px] overflow-y-auto"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <h1 className="text-2xl font-bold mb-4">
+                  console.log(&apos;송재원&apos;)
+                </h1>
 
+                {/* 페이지별 내용 */}
+                {modalPage === 1 && (
+                  <>
+                    <h2 className="text-xl font-bold mb-4">
+                      개발자를 선택한 이유?
+                    </h2>
+                    <article className="text-sm text-gray-800 leading-relaxed tracking-widest">
+                      <p>
+                        어려서부터 과학의 달이 다가오면 설레였던 감정이 아직도
+                        기억이 납니다.
+                        <p>항상 무엇인가 만들기를 굉장히 선호했었는데</p>
+                        <p>
+                          저학년때는 폐품을 활용해 실제 존재하는 물건 혹은
+                          미래에 있을 법한 물건을 만들어야 하는 일이 있었습니다.
+                        </p>
+                        <p>
+                          그 때 마다 항상 만들었던 작품이 있는데 늘 로켓 혹은
+                          비행기를 만들었습니다. 늘 무엇인가를 만들고
+                          완성하는것에 흥미를 갖고 있었고
+                        </p>
+                        고학년때 무동력 비행기를 만들며 모르는 내용 혹은 이해가
+                        되지 않는 내용들이 있을때면 늘 아버지나 어머니 혹은
+                        검색을 하며 문제를 해결해 입상했던적이 있습니다.
+                        <p>
+                          어릴때 길러졌던 무언가를 만들거나 폐품들을 재활용해
+                          새로운것을 재창조 했던 기억들은 훗날 성인이 된 저에게
+                          개발자라는 꿈을 심어주었습니다.
+                        </p>
+                      </p>
+                    </article>
+                  </>
+                )}
+
+                {modalPage === 2 && (
+                  <>
+                    <h2 className="text-xl font-bold mb-4">
+                      개발자로서의 목표는?
+                    </h2>
+                    <article className="text-sm text-gray-800 leading-relaxed tracking-widest">
+                      <p>
+                        개발자가 된 이후에는 사용자의 삶을 편리하게 만드는
+                        소프트웨어를 개발하는 것이 목표입니다.
+                      </p>
+                      <p>
+                        특히 웹 기술을 활용하여 빠르고 직관적인 사용자 경험을
+                        제공하는 애플리케이션을 만들고 싶습니다.
+                      </p>
+                      <p>
+                        앞으로도 꾸준히 성장하며 다양한 프로젝트를 경험하는 것이
+                        저의 목표입니다.
+                      </p>
+                    </article>
+                  </>
+                )}
+
+                {modalPage === 3 && (
+                  <>
+                    <h2 className="text-xl font-bold mb-4">마지막 한마디</h2>
+                    <article className="text-sm text-gray-800 leading-relaxed tracking-widestt">
+                      <p>
+                        배움에는 끝이 없다고 생각합니다. <p>끊임없이 배우고,</p>
+                        도전하며 현실에 안주하지 않는, 더욱 발전하는 개발자가
+                        되겠습니다!
+                      </p>
+                    </article>
+                  </>
+                )}
+
+                {/* 버튼 그룹 */}
+                <div className="mt-4 flex justify-end gap-4">
+                  {modalPage > 1 && (
+                    <button
+                      className="px-4 py-2 bg-gray-400 text-white rounded-lg"
+                      onClick={() => setModalPage(modalPage - 1)}
+                    >
+                      이전
+                    </button>
+                  )}
+                  {modalPage < 3 ? (
+                    <button
+                      className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                      onClick={() => setModalPage(modalPage + 1)}
+                    >
+                      다음
+                    </button>
+                  ) : (
+                    <button
+                      className="px-4 py-2 bg-red-500 text-white rounded-lg"
+                      onClick={() => setIsModalOpen(false)}
+                    >
+                      닫기
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
         <div className="flex flex-col gap-3 text-xl text-right">
           <div className="font-bold text-2xl">Do It!</div>
           <div className="flex items-center gap-2">
@@ -158,7 +277,7 @@ const App = () => {
             {/* AI-KARB 프로젝트 */}
             <div className="w-full md:w-[500px]">
               <div
-                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors"
+                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors animate-text-shadow-pop-br"
                 onClick={(event) => toggleAccordion(1, event)}
               >
                 AI-KARB
@@ -229,8 +348,11 @@ const App = () => {
                       </p>
                     </div>
                     <div>
-                      <div className=" flex font-semibold text-lg">
+                      <div className=" flex flex-col font-semibold text-lg">
                         프로젝트 이미지
+                        <p className="flex text-sm">
+                          이미지를 옆으로 슬라이드 해보세요!
+                        </p>
                       </div>
                       <div className="swiper">
                         <div className="swiper-wrapper">
@@ -312,7 +434,7 @@ const App = () => {
             {/* 패스트캠퍼스 인트라넷 */}
             <div className="w-full md:w-[500px]">
               <div
-                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors"
+                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors animate-text-shadow-pop-br"
                 onClick={(event) => toggleAccordion(2, event)}
               >
                 패스트캠퍼스 인트라넷
@@ -392,7 +514,7 @@ const App = () => {
                   >
                     Demo
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col font-semibold text-lg">
                     <div>데모 아이디 : dev@email.com</div>
                     <div>데모 비밀번호 : 123456</div>
                   </div>
