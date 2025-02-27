@@ -72,9 +72,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen bg-[#F2F2F2] text-gray-900">
       {/* 헤더 */}
-      <header className="flex flex-col items-center py-12 bg-blue-600 text-white px-6 md:px-12 lg:px-16">
+      <header className="flex flex-col items-center py-12 bg-blue-600 text-white px-6 md:px-12 lg:px-16 h-[100%]">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="text">{text}</span>
           <span
@@ -143,7 +143,7 @@ const App = () => {
                   e.stopPropagation();
                 }}
               >
-                <h1 className="text-2xl font-bold mb-4">
+                <h1 className="text-2xl font-bold mb-8">
                   console.log(&apos;송재원&apos;)
                 </h1>
 
@@ -153,7 +153,7 @@ const App = () => {
                     <h2 className="text-xl font-bold mb-4">
                       개발자를 선택한 이유?
                     </h2>
-                    <article className="text-sm text-gray-800 leading-relaxed tracking-widest">
+                    <article className="text-lg text-gray-800 leading-relaxed tracking-widest">
                       <p>
                         어려서부터 과학의 달이 다가오면 설레였던 감정이 아직도
                         기억이 납니다.
@@ -185,7 +185,7 @@ const App = () => {
                     <h2 className="text-xl font-bold mb-4">
                       개발자로서의 목표는?
                     </h2>
-                    <article className="text-sm text-gray-800 leading-relaxed tracking-widest">
+                    <article className="text-lg text-gray-800 leading-relaxed tracking-widest">
                       <p>
                         개발자가 된 이후에는 사용자의 삶을 편리하게 만드는
                         소프트웨어를 개발하는 것이 목표입니다.
@@ -205,11 +205,11 @@ const App = () => {
                 {modalPage === 3 && (
                   <>
                     <h2 className="text-xl font-bold mb-4">마지막 한마디</h2>
-                    <article className="text-sm text-gray-800 leading-relaxed tracking-widestt">
+                    <article className="text-lg text-gray-800 leading-relaxed tracking-widestt">
                       <p>
                         배움에는 끝이 없다고 생각합니다. <p>끊임없이 배우고,</p>
                         도전하며 현실에 안주하지 않는, 더욱 발전하는 개발자가
-                        되겠습니다!
+                        되겠습니다.
                       </p>
                     </article>
                   </>
@@ -277,7 +277,7 @@ const App = () => {
             {/* AI-KARB 프로젝트 */}
             <div className="w-full md:w-[500px]">
               <div
-                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors animate-text-shadow-pop-br"
+                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors"
                 onClick={(event) => toggleAccordion(1, event)}
               >
                 AI-KARB
@@ -434,7 +434,7 @@ const App = () => {
             {/* 패스트캠퍼스 인트라넷 */}
             <div className="w-full md:w-[500px]">
               <div
-                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors animate-text-shadow-pop-br"
+                className="font-semibold text-2xl cursor-pointer hover:text-blue-500 transition-colors"
                 onClick={(event) => toggleAccordion(2, event)}
               >
                 패스트캠퍼스 인트라넷
